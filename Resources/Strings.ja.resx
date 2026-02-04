@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<data name="Add" xml:space="preserve"><value>追加</value></data>
+
+	<data name="Alert_UpcomingApptBody" xml:space="preserve">
+    <value>まもなく予定があります：
+
+顧客：{0}
+タイトル：{1}
+種類：{2}
+開始：{3}
+</value>
+  </data>
+
+	<data name="Alert_UpcomingApptTitle" xml:space="preserve"><value>予定の通知</value></data>
+
+	<data name="ApptEdit_Title_Add" xml:space="preserve"><value>予定の追加</value></data>
+	<data name="ApptEdit_Title_Edit" xml:space="preserve"><value>予定の変更</value></data>
+	<data name="Appt_Customer" xml:space="preserve"><value>顧客</value></data>
+	<data name="Appt_Delete" xml:space="preserve"><value>削除</value></data>
+	<data name="Appt_DeleteFailed" xml:space="preserve"><value>削除に失敗しました。</value></data>
+	<data name="Appt_Description" xml:space="preserve"><value>説明</value></data>
+	<data name="Appt_End" xml:space="preserve"><value>終了</value></data>
+	<data name="Appt_Location" xml:space="preserve"><value>場所</value></data>
+	<data name="Appt_SaveFailed" xml:space="preserve"><value>保存に失敗しました。</value></data>
+	<data name="Appt_Start" xml:space="preserve"><value>開始</value></data>
+	<data name="Appt_Title" xml:space="preserve"><value>タイトル</value></data>
+	<data name="Appt_Type" xml:space="preserve"><value>種類</value></data>
+
+	<data name="Appt_Validation_BusinessHours" xml:space="preserve">
+    <value>予定は米国東部時間の月〜金、9:00〜17:00の間にしてください。</value>
+  </data>
+	<data name="Appt_Validation_EndAfterStart" xml:space="preserve"><value>終了は開始より後の日時にしてください。</value></data>
+	<data name="Appt_Validation_Overlap" xml:space="preserve"><value>この予定は既存の予定と重複しています。</value></data>
+	<data name="Appt_Validation_Required" xml:space="preserve"><value>顧客・タイトル・種類・開始・終了は必須です。</value></data>
+	<data name="Appt_Validation_SameDay" xml:space="preserve"><value>予定は同じ営業日（米国東部時間）内にしてください。</value></data>
+
+	<data name="Appy_Modify" xml:space="preserve"><value>変更</value></data>
+
+	<data name="Cancel" xml:space="preserve"><value>キャンセル</value></data>
+
+	<data name="Col_ApptCustomer" xml:space="preserve"><value>顧客</value></data>
+	<data name="Col_ApptEnd" xml:space="preserve"><value>終了</value></data>
+	<data name="Col_ApptId" xml:space="preserve"><value>ID</value></data>
+	<data name="Col_ApptStart" xml:space="preserve"><value>開始</value></data>
+	<data name="Col_ApptTitle" xml:space="preserve"><value>タイトル</value></data>
+	<data name="Col_ApptType" xml:space="preserve"><value>種類</value></data>
+
+	<data name="ConfirmDeleteAppt" xml:space="preserve"><value>この予定を削除しますか？</value></data>
+	<data name="ConfirmDeleteCustomer" xml:space="preserve"><value>この顧客を削除しますか？</value></data>
+
+	<data name="CustomerEdit_Title_Add" xml:space="preserve"><value>顧客の追加</value></data>
+	<data name="CustomerEdit_Title_Edit" xml:space="preserve"><value>顧客の変更</value></data>
+
+	<data name="Customer_Address" xml:space="preserve"><value>住所</value></data>
+	<data name="Customer_Address2" xml:space="preserve"><value>住所（2行目）</value></data>
+	<data name="Customer_City" xml:space="preserve"><value>市</value></data>
+	<data name="Customer_Country" xml:space="preserve"><value>国</value></data>
+
+	<data name="Customer_Delete_HasAppointments" xml:space="preserve">
+    <value>この顧客には既存の予定があるため削除できません。</value>
+  </data>
+
+	<data name="Customer_Name" xml:space="preserve"><value>顧客名</value></data>
+	<data name="Customer_Phone" xml:space="preserve"><value>電話番号</value></data>
+	<data name="Customer_Postal" xml:space="preserve"><value>郵便番号</value></data>
+
+	<data name="Customer_Validation_City" xml:space="preserve"><value>市を選択してください。</value></data>
+	<data name="Customer_Validation_Country" xml:space="preserve"><value>国を選択してください。</value></data>
+	<data name="Customer_Validation_Phone" xml:space="preserve"><value>電話番号は数字とハイフンのみ使用できます。</value></data>
+	<data name="Customer_Validation_Required" xml:space="preserve"><value>顧客名・住所・電話番号は必須です。</value></data>
+
+	<data name="Delete" xml:space="preserve"><value>削除</value></data>
+	<data name="DeleteFailed" xml:space="preserve"><value>削除に失敗しました。</value></data>
+
+	<data name="Error_db" xml:space="preserve"><value>データベース エラーです。</value></data>
+	<data name="Error_EmptyFields" xml:space="preserve"><value>ユーザー名とパスワードを入力してください。</value></data>
+	<data name="Error_InvalidCredentials" xml:space="preserve"><value>ユーザー名またはパスワードが正しくありません。</value></data>
+
+	<data name="Language_Label" xml:space="preserve"><value>言語</value></data>
+	<data name="Login_Button" xml:space="preserve"><value>ログイン</value></data>
+	<data name="Login_Title" xml:space="preserve"><value>ログイン</value></data>
+
+	<data name="Main_Title" xml:space="preserve"><value>スケジュール管理</value></data>
+
+	<data name="Modify" xml:space="preserve"><value>変更</value></data>
+	<data name="Password" xml:space="preserve"><value>パスワード</value></data>
+
+	<data name="Report_ByCustomer" xml:space="preserve"><value>顧客別の予定数</value></data>
+	<data name="Report_Error" xml:space="preserve"><value>レポートの作成に失敗しました。</value></data>
+	<data name="Report_Run" xml:space="preserve"><value>実行</value></data>
+	<data name="Report_TypesByMonth" xml:space="preserve"><value>月別の予定種類数</value></data>
+	<data name="Report_UserSchedules" xml:space="preserve"><value>ユーザー別スケジュール</value></data>
+
+	<data name="Save" xml:space="preserve"><value>保存</value></data>
+	<data name="SaveFailed" xml:space="preserve"><value>保存に失敗しました。</value></data>
+
+	<data name="SelectApptFirst" xml:space="preserve"><value>予定を選択してください。</value></data>
+	<data name="SelectCustomerFirst" xml:space="preserve"><value>顧客を選択してください。</value></data>
+
+	<data name="Tab_Appointments" xml:space="preserve"><value>予定</value></data>
+	<data name="Tab_Customers" xml:space="preserve"><value>顧客</value></data>
+	<data name="Tab_Reports" xml:space="preserve"><value>レポート</value></data>
+
+	<data name="Username" xml:space="preserve"><value>ユーザー名</value></data>
+</root>
