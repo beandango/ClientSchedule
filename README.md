@@ -4,7 +4,7 @@ A Windows Forms scheduling application that supports user login, customer manage
 
 ---
 
-## What this project does (simple explanation)
+## What this project does
 
 This app is a small scheduling system:
 
@@ -65,7 +65,7 @@ Each login attempt is recorded (success/failure + timestamp + username).
 
 ---
 
-# Project Requirements Checklist (Rubric Mapping)
+# Project Requirements Checklist 
 
 ## A1) Login Form
 
