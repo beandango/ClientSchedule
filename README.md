@@ -59,7 +59,7 @@ Rules enforced:
 A login history file is written on the local machine:
 
 - File: `login_history.txt`
-- Location: (project-defined; typically AppData or application directory depending on your implementation)
+- Location: `Documents/ClientSchedule`
 
 Each login attempt is recorded (success/failure + timestamp + username).
 
