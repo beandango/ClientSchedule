@@ -59,7 +59,7 @@ Rules enforced:
 A login history file is written on the local machine:
 
 - File: `login_history.txt`
-- Location: (project-defined; typically AppData or application directory depending on your implementation)
+- Location: `Documents/ClientSchedule`
 
 Each login attempt is recorded (success/failure + timestamp + username).
 
@@ -165,16 +165,29 @@ A simple report tab supports:
   - Language selector
   - Username/password input
   - Localized error handling
+    <img width="798" height="476" alt="image" src="https://github.com/user-attachments/assets/d5b6c8bd-25a5-4440-b1bc-04f8395aafdd" />
+
 - **MainForm**
   - Customers tab (grid + add/edit/delete)
   - Appointments tab (grid + add/edit/delete)
   - Calendar day view
   - Reports tab
+    
+    <img width="793" height="475" alt="image" src="https://github.com/user-attachments/assets/339a4771-4de4-4c57-b459-0e8acbd23a7d" />
+    <img width="795" height="476" alt="image" src="https://github.com/user-attachments/assets/2b839c8a-413a-4881-b118-c8b26fa02e03" />
+    <img width="793" height="471" alt="image" src="https://github.com/user-attachments/assets/bd4bece4-0ec8-40e4-9326-bae6dd5b41a5" />
+
+
+
 - **CustomerEditForm**
   - Name/address/phone/country/city
   - Validation + transactional save
+    <img width="797" height="474" alt="image" src="https://github.com/user-attachments/assets/ef125c1f-eacf-45f4-b1c2-adca93859e33" />
+
 - **AppointmentEditForm**
   - Customer/title/type/description/location
   - Start/end date + time selectors
   - Eastern time validation + overlap checks
+    <img width="791" height="465" alt="image" src="https://github.com/user-attachments/assets/05f8714b-1c3e-44af-ba5f-90f53bdc5038" />
+
 
