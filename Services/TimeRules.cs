@@ -4,7 +4,6 @@ namespace ClientSchedule.Services;
 
 public static class TimeRules
 {
-    // Windows timezone ID for US Eastern (works on Windows 10/11)
     public static readonly TimeZoneInfo Eastern =
         TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
 

@@ -138,7 +138,6 @@ public static class CustomerRepository
 
     public static async Task DeleteCustomerAsync(int customerId)
     {
-        // Keep behavior you already had: delete customer then delete related address
         var dt = await Db.QueryAsync(
             "SELECT addressId FROM customer WHERE customerId=@id;",
             new MySqlParameter("@id", customerId)

@@ -6,11 +6,9 @@ namespace ClientSchedule.Services;
 
 public static class ReportService
 {
-    // Raw row models (collection classes)
     private sealed record ApptRow(int AppointmentId, int UserId, string UserName, int CustomerId, string CustomerName, string Title,
                                   string Type, DateTime StartUtc, DateTime EndUtc);
 
-    // Result models (bind to DataGridView)
     public sealed record TypesByMonthRow(string Month, string Type, int Count);
     public sealed record UserScheduleRow(string User, string Customer, string Title, string Type, string StartLocal, string EndLocal);
     public sealed record ByCustomerRow(string Customer, int Count);
@@ -19,11 +17,10 @@ public static class ReportService
     {
         var appts = await LoadAppointmentsWithUserAndCustomerAsync();
 
-        // LINQ + lambda: group by month + type
         var result = appts
             .GroupBy(a => new
             {
-                Month = a.StartUtc.ToLocalTime().ToString("yyyy-MM"), // month bucket in local time
+                Month = a.StartUtc.ToLocalTime().ToString("yyyy-MM"),
                 Type = a.Type
             })
             .Select(g => new TypesByMonthRow(g.Key.Month, g.Key.Type, g.Count()))
@@ -38,7 +35,6 @@ public static class ReportService
     {
         var appts = await LoadAppointmentsWithUserAndCustomerAsync();
 
-        // LINQ + lambda: order/group per user then flatten
         var result = appts
             .OrderBy(a => a.UserName)
             .ThenBy(a => a.StartUtc)
@@ -59,7 +55,6 @@ public static class ReportService
     {
         var appts = await LoadAppointmentsWithUserAndCustomerAsync();
 
-        // LINQ + lambda: group by customer
         var result = appts
             .GroupBy(a => a.CustomerName)
             .Select(g => new ByCustomerRow(g.Key, g.Count()))
@@ -70,7 +65,6 @@ public static class ReportService
         return result;
     }
 
-    // Shared loader: pulls DB rows into a List<T> (collection)
     private static async Task<List<ApptRow>> LoadAppointmentsWithUserAndCustomerAsync()
     {
         var dt = await Db.QueryAsync(

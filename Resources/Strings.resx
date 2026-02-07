@@ -1,21 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>2.0</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-	<data name="Add" xml:space="preserve"><value>Add</value></data>
-
-	<data name="Alert_UpcomingApptBody" xml:space="preserve">
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Alert_UpcomingApptBody" xml:space="preserve">
     <value>You have an appointment starting soon:
 
 Customer: {0}
@@ -24,96 +129,205 @@ Type: {2}
 Starts: {3}
 </value>
   </data>
-
-	<data name="Alert_UpcomingApptTitle" xml:space="preserve"><value>Appointment Alert</value></data>
-
-	<data name="ApptEdit_Title_Add" xml:space="preserve"><value>Add</value></data>
-	<data name="ApptEdit_Title_Edit" xml:space="preserve"><value>Edit</value></data>
-	<data name="Appt_Customer" xml:space="preserve"><value>Customer</value></data>
-	<data name="Appt_Delete" xml:space="preserve"><value>Delete</value></data>
-	<data name="Appt_DeleteFailed" xml:space="preserve"><value>Delete failed</value></data>
-	<data name="Appt_Description" xml:space="preserve"><value>Description</value></data>
-	<data name="Appt_End" xml:space="preserve"><value>End</value></data>
-	<data name="Appt_Location" xml:space="preserve"><value>Location</value></data>
-	<data name="Appt_SaveFailed" xml:space="preserve"><value>Save failed.</value></data>
-	<data name="Appt_Start" xml:space="preserve"><value>Start</value></data>
-	<data name="Appt_Title" xml:space="preserve"><value>Title</value></data>
-	<data name="Appt_Type" xml:space="preserve"><value>Type</value></data>
-
-	<data name="Appt_Validation_BusinessHours" xml:space="preserve">
+  <data name="Alert_UpcomingApptTitle" xml:space="preserve">
+    <value>Appointment Alert</value>
+  </data>
+  <data name="ApptEdit_Title_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ApptEdit_Title_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Appt_Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Appt_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Appt_DeleteFailed" xml:space="preserve">
+    <value>Delete failed</value>
+  </data>
+  <data name="Appt_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Appt_End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="Appt_Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Appt_SaveFailed" xml:space="preserve">
+    <value>Save failed.</value>
+  </data>
+  <data name="Appt_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Appt_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Appt_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Appt_Validation_BusinessHours" xml:space="preserve">
     <value>Appointments must be scheduled Monday–Friday, 9:00 AM–5:00 PM Eastern Time.</value>
   </data>
-	<data name="Appt_Validation_EndAfterStart" xml:space="preserve"><value>End time must be after start time.</value></data>
-	<data name="Appt_Validation_Overlap" xml:space="preserve"><value>This appointment overlaps with an existing appointment.</value></data>
-	<data name="Appt_Validation_Required" xml:space="preserve"><value>Customer, Title, Type, Start, and End are required.</value></data>
-	<data name="Appt_Validation_SameDay" xml:space="preserve"><value>Appointments must be within a single business day (Eastern Time).</value></data>
-
-	<data name="Appy_Modify" xml:space="preserve"><value>Modify</value></data>
-
-	<data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
-
-	<data name="Col_ApptCustomer" xml:space="preserve"><value>Customer</value></data>
-	<data name="Col_ApptEnd" xml:space="preserve"><value>End</value></data>
-	<data name="Col_ApptId" xml:space="preserve"><value>ID</value></data>
-	<data name="Col_ApptStart" xml:space="preserve"><value>Start</value></data>
-	<data name="Col_ApptTitle" xml:space="preserve"><value>Title</value></data>
-	<data name="Col_ApptType" xml:space="preserve"><value>Type</value></data>
-
-	<data name="ConfirmDeleteAppt" xml:space="preserve"><value>Delete this appointment?</value></data>
-	<data name="ConfirmDeleteCustomer" xml:space="preserve"><value>Delete this customer?</value></data>
-
-	<data name="CustomerEdit_Title_Add" xml:space="preserve"><value>Add Customer</value></data>
-	<data name="CustomerEdit_Title_Edit" xml:space="preserve"><value>Edit Customer</value></data>
-
-	<data name="Customer_Address" xml:space="preserve"><value>Address</value></data>
-	<data name="Customer_Address2" xml:space="preserve"><value>Address2</value></data>
-	<data name="Customer_City" xml:space="preserve"><value>City</value></data>
-	<data name="Customer_Country" xml:space="preserve"><value>Country</value></data>
-
-	<data name="Customer_Delete_HasAppointments" xml:space="preserve">
+  <data name="Appt_Validation_EndAfterStart" xml:space="preserve">
+    <value>End time must be after start time.</value>
+  </data>
+  <data name="Appt_Validation_Overlap" xml:space="preserve">
+    <value>This appointment overlaps with an existing appointment.</value>
+  </data>
+  <data name="Appt_Validation_Required" xml:space="preserve">
+    <value>Customer, Title, Type, Start, and End are required.</value>
+  </data>
+  <data name="Appt_Validation_SameDay" xml:space="preserve">
+    <value>Appointments must be within a single business day (Eastern Time).</value>
+  </data>
+  <data name="Appy_Modify" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Col_ApptCustomer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Col_ApptEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="Col_ApptId" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Col_ApptStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Col_ApptTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Col_ApptType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ConfirmDeleteAppt" xml:space="preserve">
+    <value>Delete this appointment?</value>
+  </data>
+  <data name="ConfirmDeleteCustomer" xml:space="preserve">
+    <value>Delete this customer?</value>
+  </data>
+  <data name="CustomerEdit_Title_Add" xml:space="preserve">
+    <value>Add Customer</value>
+  </data>
+  <data name="CustomerEdit_Title_Edit" xml:space="preserve">
+    <value>Edit Customer</value>
+  </data>
+  <data name="Customer_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Customer_Address2" xml:space="preserve">
+    <value>Address2</value>
+  </data>
+  <data name="Customer_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Customer_Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Customer_Delete_HasAppointments" xml:space="preserve">
     <value>Cannot delete this customer because they have existing appointments.</value>
   </data>
-
-	<data name="Customer_Name" xml:space="preserve"><value>Customer Name</value></data>
-	<data name="Customer_Phone" xml:space="preserve"><value>Phone Number</value></data>
-	<data name="Customer_Postal" xml:space="preserve"><value>Postal Code</value></data>
-
-	<data name="Customer_Validation_City" xml:space="preserve"><value>Select a city.</value></data>
-	<data name="Customer_Validation_Country" xml:space="preserve"><value>Select a country.</value></data>
-	<data name="Customer_Validation_Phone" xml:space="preserve"><value>Phone must contain only digits and dashes.</value></data>
-	<data name="Customer_Validation_Required" xml:space="preserve"><value>Name, Address, and Phone are required.</value></data>
-
-	<data name="Delete" xml:space="preserve"><value>Delete</value></data>
-	<data name="DeleteFailed" xml:space="preserve"><value>Delete failed.</value></data>
-
-	<data name="Error_db" xml:space="preserve"><value>Database error.</value></data>
-	<data name="Error_EmptyFields" xml:space="preserve"><value>Please enter a username and password.</value></data>
-	<data name="Error_InvalidCredentials" xml:space="preserve"><value>The username and password do not match.</value></data>
-
-	<data name="Language_Label" xml:space="preserve"><value>Language</value></data>
-	<data name="Login_Button" xml:space="preserve"><value>Login</value></data>
-	<data name="Login_Title" xml:space="preserve"><value>Login</value></data>
-
-	<data name="Main_Title" xml:space="preserve"><value>Scheduling System</value></data>
-
-	<data name="Modify" xml:space="preserve"><value>Modify</value></data>
-	<data name="Password" xml:space="preserve"><value>Password</value></data>
-
-	<data name="Report_ByCustomer" xml:space="preserve"><value>Appointments per customer</value></data>
-	<data name="Report_Error" xml:space="preserve"><value>Report failed.</value></data>
-	<data name="Report_Run" xml:space="preserve"><value>Run</value></data>
-	<data name="Report_TypesByMonth" xml:space="preserve"><value>Appointment types by month</value></data>
-	<data name="Report_UserSchedules" xml:space="preserve"><value>Schedule for each user</value></data>
-
-	<data name="Save" xml:space="preserve"><value>Save</value></data>
-	<data name="SaveFailed" xml:space="preserve"><value>Save failed.</value></data>
-
-	<data name="SelectApptFirst" xml:space="preserve"><value>Select an appointment first.</value></data>
-	<data name="SelectCustomerFirst" xml:space="preserve"><value>Select a customer first.</value></data>
-
-	<data name="Tab_Appointments" xml:space="preserve"><value>Appointments</value></data>
-	<data name="Tab_Customers" xml:space="preserve"><value>Customers</value></data>
-	<data name="Tab_Reports" xml:space="preserve"><value>Reports</value></data>
-
-	<data name="Username" xml:space="preserve"><value>Username</value></data>
+  <data name="Customer_Name" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="Customer_Phone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Customer_Postal" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="Customer_Validation_City" xml:space="preserve">
+    <value>Select a city.</value>
+  </data>
+  <data name="Customer_Validation_Country" xml:space="preserve">
+    <value>Select a country.</value>
+  </data>
+  <data name="Customer_Validation_Phone" xml:space="preserve">
+    <value>Phone must contain only digits and dashes.</value>
+  </data>
+  <data name="Customer_Validation_Required" xml:space="preserve">
+    <value>Name, Address, and Phone are required.</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteFailed" xml:space="preserve">
+    <value>Delete failed.</value>
+  </data>
+  <data name="Error_db" xml:space="preserve">
+    <value>Database error.</value>
+  </data>
+  <data name="Error_EmptyFields" xml:space="preserve">
+    <value>Please enter a username and password.</value>
+  </data>
+  <data name="Error_InvalidCredentials" xml:space="preserve">
+    <value>The username and password do not match.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Language_Label" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Login_Button" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Main_Title" xml:space="preserve">
+    <value>Scheduling System</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Report_ByCustomer" xml:space="preserve">
+    <value>Appointments per customer</value>
+  </data>
+  <data name="Report_Error" xml:space="preserve">
+    <value>Report failed.</value>
+  </data>
+  <data name="Report_Run" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="Report_TypesByMonth" xml:space="preserve">
+    <value>Appointment types by month</value>
+  </data>
+  <data name="Report_UserSchedules" xml:space="preserve">
+    <value>Schedule for each user</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveFailed" xml:space="preserve">
+    <value>Save failed.</value>
+  </data>
+  <data name="SelectApptFirst" xml:space="preserve">
+    <value>Select an appointment first.</value>
+  </data>
+  <data name="SelectCustomerFirst" xml:space="preserve">
+    <value>Select a customer first.</value>
+  </data>
+  <data name="Tab_Appointments" xml:space="preserve">
+    <value>Appointments</value>
+  </data>
+  <data name="Tab_Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="Tab_Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
 </root>

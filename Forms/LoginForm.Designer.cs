@@ -35,6 +35,7 @@
             txtPassword = new TextBox();
             lblUsername = new Label();
             lblPassword = new Label();
+            lblLanguage = new Label();
             SuspendLayout();
             // 
             // cmbLanguagec
@@ -94,11 +95,21 @@
             lblPassword.Size = new Size(0, 15);
             lblPassword.TabIndex = 6;
             // 
+            // lblLanguage
+            // 
+            lblLanguage.AutoSize = true;
+            lblLanguage.Location = new Point(222, 58);
+            lblLanguage.Name = "lblLanguage";
+            lblLanguage.Size = new Size(38, 15);
+            lblLanguage.TabIndex = 7;
+            lblLanguage.Text = "label1";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblLanguage);
             Controls.Add(lblPassword);
             Controls.Add(lblUsername);
             Controls.Add(txtPassword);
@@ -121,5 +132,6 @@
         private TextBox txtPassword;
         private Label lblUsername;
         private Label lblPassword;
+        private Label lblLanguage;
     }
 }

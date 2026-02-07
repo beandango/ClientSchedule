@@ -259,7 +259,6 @@ public partial class MainForm : Form
 
         var dt = await AppointmentRepository.GetAppointmentsForUserBetweenUtcAsync(_userId, startUtc, endUtc);
 
-        // For the day grid, show LOCAL time (requirement A5)
         BindAppointmentsGrid(dgvDayAppointments, dt, useEasternForDisplay: false);
 
         if (lblSelectedDay is not null)

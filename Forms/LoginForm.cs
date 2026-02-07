@@ -57,6 +57,7 @@ public partial class LoginForm : Form
         lblUsername.Text = Resources.Strings.Username;
         lblPassword.Text = Resources.Strings.Password;
         btnLogin.Text = Resources.Strings.Login_Button;
+        lblLanguage.Text = Resources.Strings.Language;
     }
 
     private void ShowLocationInfo()

@@ -31,8 +31,8 @@ public static class UpcomingAlertService
             var r = dt.Rows[0];
 
             var customer = Convert.ToString(r["customerName"]) ?? "";
-            var title = Convert.ToString(r["apptTitle"]) ?? "";     // <-- use alias
-            var type = Convert.ToString(r["apptType"]) ?? "";       // <-- use alias
+            var title = Convert.ToString(r["apptTitle"]) ?? "";
+            var type = Convert.ToString(r["apptType"]) ?? "";
 
             var startUtc = TimeRules.ReadDbUtc(r["apptStart"]);
             var startLocal = startUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm");

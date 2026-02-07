@@ -5,6 +5,9 @@ namespace ClientSchedule.Data;
 
 public static class AppointmentRepository
 {
+    private const string DefaultContact = "";
+    private const string DefaultUrl = "";
+
     // ----------------------------
     // Queries
     // ----------------------------
@@ -22,7 +25,7 @@ public static class AppointmentRepository
     public static async Task<DataRow?> GetAppointmentByIdAsync(int appointmentId)
     {
         var dt = await Db.QueryAsync(
-            "SELECT appointmentId, customerId, title, type, description, location, `start`, `end` " +
+            "SELECT appointmentId, customerId, title, type, description, location, contact, url, `start`, `end` " +
             "FROM appointment " +
             "WHERE appointmentId=@id;",
             new MySqlParameter("@id", appointmentId)
@@ -30,18 +33,18 @@ public static class AppointmentRepository
 
         return dt.Rows.Count == 0 ? null : dt.Rows[0];
     }
-    public static Task<DataTable> GetAppointmentsForUserBetweenUtcAsync(int userId, DateTime startUtc, DateTime endUtc)
-    => Db.QueryAsync(
-        "SELECT a.appointmentId, c.customerName, a.title, a.type, a.`start`, a.`end` " +
-        "FROM appointment a " +
-        "JOIN customer c ON a.customerId = c.customerId " +
-        "WHERE a.userId = @uid AND a.`start` >= @startUtc AND a.`start` < @endUtc " +
-        "ORDER BY a.`start`;",
-        new MySqlParameter("@uid", userId),
-        new MySqlParameter("@startUtc", MySqlDbType.DateTime) { Value = startUtc },
-        new MySqlParameter("@endUtc", MySqlDbType.DateTime) { Value = endUtc }
-    );
 
+    public static Task<DataTable> GetAppointmentsForUserBetweenUtcAsync(int userId, DateTime startUtc, DateTime endUtc)
+        => Db.QueryAsync(
+            "SELECT a.appointmentId, c.customerName, a.title, a.type, a.`start`, a.`end` " +
+            "FROM appointment a " +
+            "JOIN customer c ON a.customerId = c.customerId " +
+            "WHERE a.userId = @uid AND a.`start` >= @startUtc AND a.`start` < @endUtc " +
+            "ORDER BY a.`start`;",
+            new MySqlParameter("@uid", userId),
+            new MySqlParameter("@startUtc", MySqlDbType.DateTime) { Value = startUtc },
+            new MySqlParameter("@endUtc", MySqlDbType.DateTime) { Value = endUtc }
+        );
 
     // ----------------------------
     // Mutations
@@ -61,13 +64,15 @@ public static class AppointmentRepository
         return Db.ExecAsync(
             "INSERT INTO appointment " +
             "(customerId, userId, title, description, location, contact, type, url, `start`, `end`, createDate, createdBy, lastUpdateBy) " +
-            "VALUES (@cid, @uid, @t, @d, @loc, NULL, @type, NULL, @s, @e, NOW(), @cb, @lub);",
+            "VALUES (@cid, @uid, @t, @d, @loc, @contact, @type, @url, @s, @e, NOW(), @cb, @lub);",
             new MySqlParameter("@cid", customerId),
             new MySqlParameter("@uid", userId),
             new MySqlParameter("@t", title),
             new MySqlParameter("@d", DbNullIfEmpty(description)),
             new MySqlParameter("@loc", DbNullIfEmpty(location)),
+            new MySqlParameter("@contact", DefaultContact),
             new MySqlParameter("@type", type),
+            new MySqlParameter("@url", DefaultUrl),
             new MySqlParameter("@s", MySqlDbType.DateTime) { Value = startUtc },
             new MySqlParameter("@e", MySqlDbType.DateTime) { Value = endUtc },
             new MySqlParameter("@cb", username),
@@ -88,12 +93,13 @@ public static class AppointmentRepository
     {
         return Db.ExecAsync(
             "UPDATE appointment " +
-            "SET customerId=@cid, title=@t, description=@d, location=@loc, type=@type, `start`=@s, `end`=@e, lastUpdateBy=@lub " +
+            "SET customerId=@cid, title=@t, description=@d, location=@loc, contact=@contact, type=@type, `start`=@s, `end`=@e, lastUpdateBy=@lub " +
             "WHERE appointmentId=@id;",
             new MySqlParameter("@cid", customerId),
             new MySqlParameter("@t", title),
             new MySqlParameter("@d", DbNullIfEmpty(description)),
             new MySqlParameter("@loc", DbNullIfEmpty(location)),
+            new MySqlParameter("@contact", DefaultContact),
             new MySqlParameter("@type", type),
             new MySqlParameter("@s", MySqlDbType.DateTime) { Value = startUtc },
             new MySqlParameter("@e", MySqlDbType.DateTime) { Value = endUtc },

@@ -510,6 +510,15 @@ namespace ClientSchedule.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
+        internal static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
         internal static string Language_Label {
             get {
                 return ResourceManager.GetString("Language_Label", resourceCulture);
