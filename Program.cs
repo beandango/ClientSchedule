@@ -1,5 +1,6 @@
-using ClientSchedule.Services;
+using System.Globalization;
 using ClientSchedule.Forms;
+using ClientSchedule.Services;
 
 namespace ClientSchedule;
 
@@ -10,7 +11,8 @@ internal static class Program
     {
         ApplicationConfiguration.Initialize();
 
-        AppState.SetCulture("en-US");
+        var osUi = CultureInfo.CurrentUICulture?.Name ?? "en-US";
+        AppState.SetCulture(osUi);
 
         using var login = new LoginForm();
         if (login.ShowDialog() != DialogResult.OK)

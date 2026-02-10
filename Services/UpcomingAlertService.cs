@@ -19,11 +19,10 @@ public static class UpcomingAlertService
                 "WHERE a.userId=@uid AND a.`start` >= @now AND a.`start` <= @soon " +
                 "ORDER BY a.`start` " +
                 "LIMIT 1;",
-                new MySql.Data.MySqlClient.MySqlParameter("@uid", userId),
-                new MySql.Data.MySqlClient.MySqlParameter("@now", nowUtc),
-                new MySql.Data.MySqlClient.MySqlParameter("@soon", soonUtc)
+                new MySqlParameter("@uid", userId),
+                new MySqlParameter("@now", MySqlDbType.DateTime) { Value = nowUtc },
+                new MySqlParameter("@soon", MySqlDbType.DateTime) { Value = soonUtc }
             );
-
 
             if (dt.Rows.Count == 0)
                 return;
@@ -35,7 +34,7 @@ public static class UpcomingAlertService
             var type = Convert.ToString(r["apptType"]) ?? "";
 
             var startUtc = TimeRules.ReadDbUtc(r["apptStart"]);
-            var startLocal = startUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm");
+            var startLocal = TimeRules.UtcToUserLocal(startUtc).ToString("yyyy-MM-dd HH:mm");
 
             if (string.IsNullOrWhiteSpace(title))
                 title = "(no title)";

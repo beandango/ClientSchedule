@@ -35,8 +35,9 @@ public partial class LoginForm : Form
         cmbLanguagec.Items.Add(new LangItem("English", "en-US"));
         cmbLanguagec.Items.Add(new LangItem("日本語", "ja-JP"));
 
-        var ui = CultureInfo.CurrentUICulture.Name;
+        var ui = AppState.CurrentCulture.Name;
         var defaultCulture = ui.StartsWith("ja", StringComparison.OrdinalIgnoreCase) ? "ja-JP" : "en-US";
+
 
         cmbLanguagec.SelectedItem = cmbLanguagec.Items
             .Cast<LangItem>()
@@ -98,7 +99,11 @@ public partial class LoginForm : Form
             LoggedInUsername = Convert.ToString(dt.Rows[0]["userName"]) ?? user;
 
             LoginHistoryService.AppendLogin(LoggedInUsername);
-            MessageBox.Show("Login history saved to:\n" + ClientSchedule.Services.LoginHistoryService.GetLogPath());
+            var path = LoginHistoryService.GetLogPath();
+
+            MessageBox.Show(string.Format(Resources.Strings.Login_History, path));
+
+
 
 
 

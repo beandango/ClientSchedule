@@ -535,6 +535,17 @@ namespace ClientSchedule.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login history saved to:
+        ///{0}
+        ///.
+        /// </summary>
+        internal static string Login_History {
+            get {
+                return ResourceManager.GetString("Login_History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login_Title {

@@ -143,7 +143,7 @@ public partial class MainForm : Form
         var id = GetSelectedCustomerId();
         if (id is null)
         {
-            MessageBox.Show("Select a customer first.");
+            MessageBox.Show(Resources.Strings.SelectCustomerFirst);
             return;
         }
 
@@ -157,11 +157,11 @@ public partial class MainForm : Form
         var id = GetSelectedCustomerId();
         if (id is null)
         {
-            MessageBox.Show("Select a customer first.");
+            MessageBox.Show(Resources.Strings.SelectCustomerFirst);
             return;
         }
 
-        if (MessageBox.Show("Delete this customer?", "Confirm", MessageBoxButtons.YesNo) != DialogResult.Yes)
+        if (MessageBox.Show(Resources.Strings.ConfirmDeleteCustomer, "Confirm", MessageBoxButtons.YesNo) != DialogResult.Yes)
             return;
 
         try
@@ -171,7 +171,7 @@ public partial class MainForm : Form
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Delete failed.\n" + ex.Message);
+            MessageBox.Show(Resources.Strings.DeleteFailed + "\n" + ex.Message);
         }
     }
 
@@ -188,7 +188,8 @@ public partial class MainForm : Form
     private async Task LoadAppointmentsAsync()
     {
         var dt = await AppointmentRepository.GetAppointmentsForUserAsync(_userId);
-        BindAppointmentsGrid(dgvAppointments, dt, useEasternForDisplay: true);
+
+        BindAppointmentsGrid(dgvAppointments, dt);
     }
 
     private int? GetSelectedAppointmentId()
@@ -241,31 +242,28 @@ public partial class MainForm : Form
     }
 
     // ----------------------------
-    // Calendar day view (Eastern)
+    // Calendar day view 
     // ----------------------------
 
     private async Task LoadAppointmentsForSelectedDayAsync(DateTime selectedLocalDate)
     {
-        var selectedDateEt = selectedLocalDate.Date;
+        var day = selectedLocalDate.Date;
 
-        var startOfDayEt = new DateTime(
-            selectedDateEt.Year, selectedDateEt.Month, selectedDateEt.Day,
-            0, 0, 0, DateTimeKind.Unspecified);
+        var startOfDayLocal = new DateTime(day.Year, day.Month, day.Day, 0, 0, 0, DateTimeKind.Unspecified);
+        var endOfDayLocal = startOfDayLocal.AddDays(1);
 
-        var endOfDayEt = startOfDayEt.AddDays(1);
-
-        var startUtc = TimeRules.EasternToUtc(startOfDayEt);
-        var endUtc = TimeRules.EasternToUtc(endOfDayEt);
+        var startUtc = TimeZoneInfo.ConvertTimeToUtc(startOfDayLocal, TimeZoneInfo.Local);
+        var endUtc = TimeZoneInfo.ConvertTimeToUtc(endOfDayLocal, TimeZoneInfo.Local);
 
         var dt = await AppointmentRepository.GetAppointmentsForUserBetweenUtcAsync(_userId, startUtc, endUtc);
 
-        BindAppointmentsGrid(dgvDayAppointments, dt, useEasternForDisplay: false);
+        BindAppointmentsGrid(dgvDayAppointments, dt);
 
         if (lblSelectedDay is not null)
-            lblSelectedDay.Text = $"Selected day (Eastern): {selectedDateEt:yyyy-MM-dd}";
+            lblSelectedDay.Text = $"Selected day (Local): {day:yyyy-MM-dd}";
     }
 
-    private static void BindAppointmentsGrid(DataGridView grid, DataTable dt, bool useEasternForDisplay)
+    private static void BindAppointmentsGrid(DataGridView grid, DataTable dt)
     {
         if (!dt.Columns.Contains("startLocal")) dt.Columns.Add("startLocal", typeof(string));
         if (!dt.Columns.Contains("endLocal")) dt.Columns.Add("endLocal", typeof(string));
@@ -275,13 +273,8 @@ public partial class MainForm : Form
             var sUtc = TimeRules.ReadDbUtc(r["start"]);
             var eUtc = TimeRules.ReadDbUtc(r["end"]);
 
-            r["startLocal"] = useEasternForDisplay
-                ? TimeRules.FormatEasternForGrid(sUtc)
-                : sUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm");
-
-            r["endLocal"] = useEasternForDisplay
-                ? TimeRules.FormatEasternForGrid(eUtc)
-                : eUtc.ToLocalTime().ToString("yyyy-MM-dd HH:mm");
+            r["startLocal"] = TimeRules.FormatUserLocalForGrid(sUtc);
+            r["endLocal"] = TimeRules.FormatUserLocalForGrid(eUtc);
         }
 
         grid.DataSource = dt;

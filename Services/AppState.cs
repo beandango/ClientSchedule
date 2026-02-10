@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Threading;
 
 namespace ClientSchedule.Services;
 
@@ -12,8 +13,11 @@ public static class AppState
     {
         var c = new CultureInfo(cultureName);
 
-        CultureInfo.CurrentCulture = c;
-        CultureInfo.CurrentUICulture = c;
+        CultureInfo.DefaultThreadCurrentCulture = c;
+        CultureInfo.DefaultThreadCurrentUICulture = c;
+
+        Thread.CurrentThread.CurrentCulture = c;
+        Thread.CurrentThread.CurrentUICulture = c;
 
         Application.CurrentCulture = c;
 

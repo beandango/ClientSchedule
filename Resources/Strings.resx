@@ -279,6 +279,11 @@ Starts: {3}
   <data name="Login_Button" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="Login_History" xml:space="preserve">
+    <value>Login history saved to:
+{0}
+</value>
+  </data>
   <data name="Login_Title" xml:space="preserve">
     <value>Login</value>
   </data>

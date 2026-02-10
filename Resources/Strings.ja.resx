@@ -279,6 +279,11 @@
   <data name="Login_Button" xml:space="preserve">
     <value>ログイン</value>
   </data>
+  <data name="Login_History" xml:space="preserve">
+    <value>ログイン履歴を保存しました：
+{0}
+</value>
+  </data>
   <data name="Login_Title" xml:space="preserve">
     <value>ログイン</value>
   </data>
